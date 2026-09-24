@@ -1,3 +1,11 @@
+const SUPABASE_URL = "https://thiqoziaxotzxvlywcwg.supabase.co";
+const SUPABASE_KEY = "sb_publishable_7kuQZcKSGEDnmUEHpzRmJg_qwcBrY0Z";
+
+const supabaseHeaders = {
+  "apikey": SUPABASE_KEY,
+  "Authorization": "Bearer " + SUPABASE_KEY,
+  "Content-Type": "application/json"
+};
 const CONFIG={phone:"05401001611",wa:"905401001611"};
 const DEFAULT_CATS=[
  {id:"akvaryum",name:"Akvaryum",desc:"Kendi üretimimiz canlı balıklar",items:["Gurami","Beta","Lepistes","Zebra Danio"]},
