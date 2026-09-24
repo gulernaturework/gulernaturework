@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07120c">
+<title>Güler Nature & Work</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="#"><span class="mark">⌁</span><span><b>GÜLER</b><small>NATURE & WORK</small></span></a>
+  <nav><a href="#ilanlar">İlanlar</a><a href="#hakkimizda">Hakkımızda</a><a href="#iletisim">İletişim</a></nav>
+  <button class="hamb" onclick="document.body.classList.toggle('nav-open')">☰</button>
+</header>
+
+<section class="hero">
+  <div class="hero-bg"></div><div class="shade"></div>
+  <div class="hero-content">
+    <span class="eyebrow">DOĞA • YAŞAM • HİZMET</span>
+    <h1>Güler Nature <i>&</i> Work</h1>
+    <p>Doğal yaşam, yaşamın doğasında.</p>
+    <div class="assistant">
+      <span class="bot">✦</span><div><b>Merhaba! 👋</b><small>Size nasıl yardımcı olabilirim?</small></div>
+    </div>
+    <div class="quick">
+      <button onclick="go('ilanlar')">▦ İlanlara bakacağım</button>
+      <button onclick="contact()">☎ Size nasıl ulaşırım?</button>
+      <button onclick="chatOpen()">✦ Asistanla konuş</button>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="section" id="ilanlar">
+  <div class="head"><div><span class="eyebrow">KEŞFET</span><h2>Kategoriler</h2></div></div>
+  <div id="categories" class="categories"></div>
+  <div id="categoryView" class="category-view"></div>
+</section>
+
+<section class="about" id="hakkimizda">
+ <div><span class="eyebrow">GÜLER NATURE & WORK</span><h2>Doğal olanı, yaşamın içindeki hizmetlerle buluşturuyoruz.</h2></div>
+ <p>Üretimden hizmete; akvaryum canlılarından doğal zeytin ürünlerine, organizasyon ekipmanlarından nakliye ve ilaçlamaya kadar ilanlarımızı tek yerde topluyoruz.</p>
+</section>
+
+<section class="contact" id="iletisim">
+ <div><span class="eyebrow">İLETİŞİM</span><h2>Bizimle iletişime geçin.</h2><p>WhatsApp'tan yazın veya doğrudan arayın.</p></div>
+ <div class="actions"><a id="wa" class="btn wa">◉ WhatsApp</a><a id="tel" class="btn tel">☎ Hemen Ara</a></div>
+</section>
+</main>
+
+<footer><div><b>GÜLER NATURE & WORK</b><small>Doğal yaşam, yaşamın doğasında.</small></div><button onclick="adminLogin()">Yönetici Paneli</button></footer>
+
+<div id="chat" class="chat">
+ <div class="chat-head"><b>Güler Asistan</b><button onclick="chatClose()">×</button></div>
+ <div id="msgs" class="msgs"><div class="msg bot">Merhaba 👋 Size nasıl yardımcı olabilirim?</div></div>
+ <div class="chips">
+  <button onclick="ask('Akvaryum')">🐠 Akvaryum</button><button onclick="ask('Zeytin')">🫒 Zeytin</button>
+  <button onclick="ask('Organizasyon')">🎉 Organizasyon</button><button onclick="ask('Nakliye')">🚚 Nakliye</button><button onclick="ask('İlaçlama')">🦟 İlaçlama</button>
+ </div>
+ <form onsubmit="send(event)"><input id="chatInput" placeholder="Mesajınızı yazın..."><button>➤</button></form>
+</div>
+
+<div id="modal" class="modal"><div class="modalbox"><button class="x" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
+
+<script src="script.js"></script>
+</body></html>
