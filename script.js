@@ -476,25 +476,17 @@ async function siteAyarlariKaydet() {
     const logoInput = document.getElementById("siteLogoAdmin");
     const bgInput = document.getElementById("siteBgAdmin");
 
-    const logoUrl = logoInput.files[0]
-      ? await dosyaToData(logoInput.files[0])
-      : null;
-
-    const backgroundUrl = bgInput.files[0]
-      ? await dosyaToData(bgInput.files[0])
-      : null;
-
     const veri = {
-      site_name: siteName,
+      site_adi: siteName,
       slogan: slogan
     };
 
-    if (logoUrl) {
-      veri.logo_url = logoUrl;
+    if (logoInput.files[0]) {
+      veri.logo_url = await dosyaToData(logoInput.files[0]);
     }
 
-    if (backgroundUrl) {
-      veri.background_url = backgroundUrl;
+    if (bgInput.files[0]) {
+      veri.arka_plan_url = await dosyaToData(bgInput.files[0]);
     }
 
     await API("site_settings?id=eq.1", {
@@ -509,7 +501,7 @@ async function siteAyarlariKaydet() {
 
   } catch (hata) {
     console.error(hata);
-    alert("Site ayarları kaydedilirken hata oluştu.");
+    alert("HATA: " + (hata.message || hata));
   }
 }
 function adminPanel() {
