@@ -538,6 +538,40 @@ function adminPanel() {
     </button>
 
     <hr>
+    <h3>Site Ayarları</h3>
+
+<div class="formgrid">
+
+  <div class="field">
+    <label>Site Adı</label>
+    <input id="siteNameAdmin" placeholder="Güler Nature & Work">
+  </div>
+
+  <div class="field">
+    <label>Slogan</label>
+    <input id="siteSloganAdmin" placeholder="Slogan">
+  </div>
+
+  <div class="field">
+    <label>Logo Görseli</label>
+    <input id="siteLogoAdmin" type="file" accept="image/*">
+  </div>
+
+  <div class="field">
+    <label>Arka Plan Görseli</label>
+    <input id="siteBgAdmin" type="file" accept="image/*">
+  </div>
+
+</div>
+
+<button
+  class="birincil"
+  onclick="siteAyarlariKaydet()"
+>
+  Site Ayarlarını Kaydet
+</button>
+
+<hr>
 
     <h3>Kategori Açıklamaları</h3>
 
