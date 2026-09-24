@@ -469,41 +469,29 @@ function adminAuth() {
    ADMİN PANELİ
 ========================= */
 async function siteAyarlariKaydet() {
-  try {
-    const siteName = document.getElementById("siteNameAdmin").value.trim();
-    const slogan = document.getElementById("siteSloganAdmin").value.trim();
+    try {
+        const siteName = document.getElementById("siteNameAdmin").value.trim();
+        const slogan = document.getElementById("siteSloganAdmin").value.trim();
 
-    const logoInput = document.getElementById("siteLogoAdmin");
-    const bgInput = document.getElementById("siteBgAdmin");
+        const veri = {
+            site_adi: siteName,
+            slogan: slogan
+        };
 
-    const veri = {
-      site_adi: siteName,
-      slogan: slogan
-    };
+        await API("site_settings?id=eq.1", {
+            method: "PATCH",
+            headers: {
+                "Prefer": "return=minimal"
+            },
+            body: JSON.stringify(veri)
+        });
 
-    if (logoInput.files[0]) {
-      veri.logo_url = await dosyaToData(logoInput.files[0]);
+        alert("Site ayarları başarıyla kaydedildi.");
+
+    } catch (hata) {
+        console.error(hata);
+        alert("HATA: " + (hata.message || hata));
     }
-
-    if (bgInput.files[0]) {
-      veri.arka_plan_url = await dosyaToData(bgInput.files[0]);
-    }
-
-    await API("site_settings?id=eq.1", {
-      method: "PATCH",
-      headers: {
-        "Prefer": "return=minimal"
-      },
-      body: JSON.stringify(veri)
-    });
-
-    alert("Site ayarları başarıyla kaydedildi.");
-
-  } catch (hata) {
-    console.error(hata);
-    alert("HATA: " + (hata.message || hata));
-  }
-}
 function adminPanel() {
 
   document.getElementById("modalContent").innerHTML = `
