@@ -492,6 +492,7 @@ async function siteAyarlariKaydet() {
         console.error(hata);
         alert("HATA: " + (hata.message || hata));
     }
+} 
 function adminPanel() {
 
   document.getElementById("modalContent").innerHTML = `
