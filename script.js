@@ -468,31 +468,7 @@ function adminAuth() {
 /* =========================
    ADMİN PANELİ
 ========================= */
-async function siteAyarlariKaydet() {
-    try {
-        const siteName = document.getElementById("siteNameAdmin").value.trim();
-        const slogan = document.getElementById("siteSloganAdmin").value.trim();
 
-        const veri = {
-            site_adi: siteName,
-            slogan: slogan
-        };
-
-        await API("site_settings?id=eq.1", {
-            method: "PATCH",
-            headers: {
-                "Prefer": "return=minimal"
-            },
-            body: JSON.stringify(veri)
-        });
-
-        alert("Site ayarları başarıyla kaydedildi.");
-
-    } catch (hata) {
-        console.error(hata);
-        alert("HATA: " + (hata.message || hata));
-    }
-}
 function adminPanel() {
 
   document.getElementById("modalContent").innerHTML = `
